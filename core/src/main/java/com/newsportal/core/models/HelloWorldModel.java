@@ -36,8 +36,8 @@ import java.util.Optional;
 @Model(adaptables = Resource.class)
 public class HelloWorldModel {
 
-    @ValueMapValue(name=PROPERTY_RESOURCE_TYPE, injectionStrategy=InjectionStrategy.OPTIONAL)
-    @Default(values="No resourceType")
+    @ValueMapValue(name = PROPERTY_RESOURCE_TYPE, injectionStrategy = InjectionStrategy.OPTIONAL)
+    @Default(values = "No resourceType")
     protected String resourceType;
 
     @SlingObject
@@ -45,22 +45,27 @@ public class HelloWorldModel {
     @SlingObject
     private ResourceResolver resourceResolver;
 
-    private String message;
+    @ValueMapValue
+    private String text;
 
-    @PostConstruct
-    protected void init() {
-        PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
-        String currentPagePath = Optional.ofNullable(pageManager)
-                .map(pm -> pm.getContainingPage(currentResource))
-                .map(Page::getPath).orElse("");
+    @ValueMapValue
+    private String description;
 
-        message = "Hello World!\n"
-            + "Resource type is: " + resourceType + "\n"
-            + "Current page is:  " + currentPagePath + "\n";
+    // @PostConstruct
+    // protected void init() {
+    //     PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
+    //     String currentPagePath = Optional.ofNullable(pageManager)
+    //             .map(pm -> pm.getContainingPage(currentResource))
+    //             .map(Page::getPath).orElse("");
+    // }
+
+
+    public String getText() {
+        return text;
     }
 
-    public String getMessage() {
-        return message;
+    public String getDescription() {
+        return description;
     }
 
 }
