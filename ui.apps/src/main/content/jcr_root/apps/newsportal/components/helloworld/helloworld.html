@@ -1,9 +1,6 @@
-<sly data-sly-use.model="com.wknd.core.models.HelloWorldModel"/>
+<sly data-sly-use.hello="com.newsportal.core.models.HelloWorldModel"></sly>
 
 <div class="cmp-helloworld">
-
-    <h2>${model.text}</h2>
-
-    <p>${model.description}</p>
-
+    <h2>${hello.text}</h2>
+    <p>${hello.description}</p>
 </div>

@@ -1,0 +1,19 @@
+<sly data-sly-use.model="com.newsportal.core.models.NewsCardModel"/>
+
+<div class="news-card">
+
+    <img src="${model.fileReference}" alt="${model.title}"/>
+
+    <h2>${model.title}</h2>
+
+    <p>${model.description}</p>
+
+    <span>${model.category}</span>
+
+    <p>By ${model.author}</p>
+
+    <p>${model.publishDate}</p>
+
+    <a href="${model.readMorePage}">Read More</a>
+
+</div>

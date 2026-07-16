@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+        xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+        xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+        xmlns:cq="http://www.day.com/jcr/cq/1.0"
+        xmlns:jcr="http://www.jcp.org/jcr/1.0"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="News Card"
+        sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+
+        <items jcr:primaryType="nt:unstructured">
+
+            <tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs">
+
+                <items jcr:primaryType="nt:unstructured">
+
+                    <properties
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Properties"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                        <items jcr:primaryType="nt:unstructured">
+
+                            <title
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Title"
+                                    name="./title"/>
+
+                            <description
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                    fieldLabel="Description"
+                                    name="./description"/>
+
+                            <image
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldLabel="Image"
+                                    name="./fileReference"
+                                    rootPath="/content/dam"/>
+
+                            <category
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldLabel="Category"
+                                    name="./category">
+
+                                <items jcr:primaryType="nt:unstructured">
+
+                                    <technology
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Technology"
+                                            value="Technology"/>
+
+                                    <sports
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Sports"
+                                            value="Sports"/>
+
+                                    <business
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Business"
+                                            value="Business"/>
+
+                                </items>
+
+                            </category>
+
+                            <author
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Author"
+                                    name="./author"/>
+
+                            <publishDate
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                    fieldLabel="Publish Date"
+                                    name="./publishDate"/>
+
+                            <readMore
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldLabel="Read More Page"
+                                    name="./readMorePage"
+                                    rootPath="/content"/>
+
+                        </items>
+
+                    </properties>
+
+                </items>
+
+            </tabs>
+
+        </items>
+
+    </content>
+
+</jcr:root>
