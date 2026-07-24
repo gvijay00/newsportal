@@ -51,13 +51,18 @@ public class HelloWorldModel {
     @ValueMapValue
     private String description;
 
-    // @PostConstruct
-    // protected void init() {
-    //     PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
-    //     String currentPagePath = Optional.ofNullable(pageManager)
-    //             .map(pm -> pm.getContainingPage(currentResource))
-    //             .map(Page::getPath).orElse("");
-    // }
+     @PostConstruct
+     protected void init() {
+         System.out.println(currentResource.getPath());
+         System.out.println(currentResource.getResourceType());
+         System.out.println(currentResource.getName());
+
+
+//         PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
+//         String currentPagePath = Optional.ofNullable(pageManager)
+//                 .map(pm -> pm.getContainingPage(currentResource))
+//                 .map(Page::getPath).orElse("");
+     }
 
 
     public String getText() {
